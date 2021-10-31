@@ -1,8 +1,11 @@
 def ispalindrome(word):
     word2 = ""
 
+    # This list is included so the program can ignore spaces and punctuation when checking if the sentence is a palindrome.
+    notincluded = [" ", ".", "?", "!", ",", ";", ":", "–", "-", "[", "]", "{", "}", "(", ")", "\'", "\""]
+
     for i in word:
-        if i != ' ':
+        if i not in notincluded:
             word2 += i
 
     word2 = word2.lower()
@@ -19,4 +22,4 @@ def ispalindrome(word):
         print("Not A Palindrome")
         return False
 
-ispalindrome("never odd or even")
+ispalindrome("Oh, who was it I saw? Oh, who?")
